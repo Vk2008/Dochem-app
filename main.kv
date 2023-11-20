@@ -1,0 +1,25 @@
+#:include kv/homescreen.kv
+#:include kv/profilescreen.kv
+#:include kv/fydscreen.kv
+#:include kv/dietscreen.kv
+#:include kv/yogascreen.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name: 'home_screen'
+            id: home_screen
+        ProfileScreen:
+            name: 'profile_screen'
+            id: profile_screen
+        FydScreen:
+            name: 'fyd_screen'
+            id: fyd_screen
+        DietScreen:
+            name: 'diet_screen'
+            id: diet_screen
+        YogaScreen:
+            name: 'yoga_screen'
+            id: 'yoga_screen'
