@@ -1,0 +1,128 @@
+#:import utils kivy.utils
+<HomeScreen>:
+    FloatLayout:
+        canvas:
+            Color: 
+                rgb: utils.get_color_from_hex('#a0d9ef')
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            rows: 1
+            cols: 10
+            pos_hint: {'top': 1, 'left': 1}
+            size_hint: 1,.1
+            Image:
+                source: 'images/logo.png'
+                pos_hint: {'top': 1, 'left': 1}
+                
+            Label:
+                id: title
+                text: 'Dochem'
+                pos_hint: {'top': 1, 'right': 1}
+                font_size: 50
+                color: '#000221'
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex('#a0d9ef')
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+        
+        GridLayout:
+            id: bannner_1
+            rows: 1
+            pos_hint: {'top':.8, 'left':1}
+            size_hint: 1,.1
+            spacing: [12]
+            padding: [12]
+
+            Button:
+                id: banner_l_1
+                text: 'Doctor'
+                background_normal: 'images/button.png'
+                on_release: app.change_screen('fyd_screen')
+                
+            Button:
+                id: banner_l_2
+                text: 'Diet Plan'
+                background_normal: 'images/button.png'
+                on_release: app.change_screen('diet_screen')
+
+            Button:
+                id: banner_l_3
+                text: 'Yoga Sessions'
+                background_normal: 'images/button.png'
+                on_release: app.change_screen('yoga_screen')
+
+            Button:
+                id: banner_l_4
+                text: 'Blog'
+                background_normal: 'images/button.png'
+
+        GridLayout:
+            id: banner_2
+            cols: 1
+            pos_hint: {'top': .7, 'left': 1}
+            size_hint: 1, .2
+            Label:
+                text: 'Recommended For You'
+                color: '#000221'
+            GridLayout:
+                rows: 1
+                pos_hint: {'top': .7, 'left': 1}
+                size_hint: 1, 5
+                spacing: 12
+                Image:
+                    source: 'images/img.png'
+                Image:
+                    source: 'images/img.png'
+                Image:
+                    source: 'images/img.png'
+
+
+        GridLayout:
+            id: banner_3
+            cols: 1
+            pos_hint: {'top': .4, 'left': 1}
+            size_hint: 1, .2
+            Label:
+                text: 'Upcoming...'
+                color: '#000221'
+            GridLayout:
+                rows: 1
+                pos_hint: {'top': .4, 'left': 1}
+                size_hint: 1, 5
+                spacing: 12
+                Image:
+                    source: 'images/img.png'
+                Image:
+                    source: 'images/img.png'
+                Image:
+                    source: 'images/img.png'
+
+        MDBoxLayout:
+            id: menu
+            rows: 1
+            pos_hint: {'top': .1, 'left': 1}
+            size_hint: 1,.09 
+            adaptive_height: True
+            spacing: 150
+            canvas:
+                Color: 
+                    rgb: utils.get_color_from_hex('##fffada')
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    
+            MDIconButton:
+                icon: 'account-circle'
+                
+
+            MDIconButton:
+                icon: 'home'
+                
+            
+            MDIconButton:
+                icon: 'help'
+        

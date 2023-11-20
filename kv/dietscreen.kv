@@ -1,0 +1,126 @@
+#:import utils kivy.utils
+<DietScreen>:
+    FloatLayout:
+        canvas:
+            Color: 
+                rgb: utils.get_color_from_hex('#a0d9ef')
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            cols: 1
+            Label:
+                text: 'Welcome!'
+                color: '#000221'
+                pos_hint: {'top': 1, 'right': 1}
+            GridLayout:
+                cols: 2
+                Label:
+                    text: 'Vegetarian'
+                    color: '#000221'
+                CheckBox:
+                    group: 'mode_diet'
+                    on_active: root.checkbox_click(self,self.active, 'Vegetarian')
+                    color: '#000221'
+                Label:
+                    text: 'Non-Vegetarian'
+                    color: '#000221'
+                CheckBox:
+                    group: 'mode_diet'
+                    on_active: root.checkbox_click(self, self.active, 'Non-Vegetarian')
+                    color: '#000221'
+                Label: 
+                    text: 'Your Diet Plan:'
+                    color: '#000221'
+
+                GridLayout:
+                    cols: 4
+                    rows: 4
+                    spacing: 4
+                    Label:
+                        text: ''
+                        color: '#000221'
+                    Label: 
+                        text: 'Day 1'
+                        color: '#000221'
+                    Label:
+                        text: 'Day 2'
+                        color: '#000221'
+                    Label:
+                        text: 'Day 3'
+                        color: '#000221'
+                    Label: 
+                        text: 'Breakfast: '
+                        color: '#000221'
+                    Label:
+                        id: b_d_1
+                        text: ''
+                        color: '#000221'
+                    Label:
+                        id: b_d_2
+                        text: ''
+                        color: '#000221'
+                    Label:
+                        id: b_d_3
+                        text: ''
+                        color: '#000221'
+
+
+                    Label: 
+                        text: 'Lunch: '
+                        color: '#000221'
+                    Label:
+                        id: l_d_1
+                        text: ''
+                        color: '#000221'
+                    Label:
+                        id: l_d_2
+                        text: ''
+                        color: '#000221'
+                    Label:
+                        id: l_d_3
+                        text: ''
+                        color: '#000221'
+
+
+                    Label:
+                        text: 'Dinner: '
+                        color: '#000221'
+                    Label:
+                        id: d_d_1
+                        text: ''
+                        color: '#000221'
+                    Label:
+                        id: d_d_2
+                        text: ''
+                        color: '#000221'
+                    Label:
+                        id: d_d_3
+                        text: ''
+                        color: '#000221'
+            MDBoxLayout:
+                id: menu
+                rows: 1
+                pos_hint: {'top': .1, 'left': 1}
+                size_hint: 1,.09 
+                adaptive_height: True
+                spacing: 150
+                canvas:
+                    Color: 
+                        rgb: utils.get_color_from_hex('##fffada')
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        
+                MDIconButton:
+                    icon: 'account-circle'
+                    
+
+                MDIconButton:
+                    icon: 'home'
+                    on_press: app.change_screen('home_screen')
+                    
+                
+                MDIconButton:
+                    icon: 'help'
+                    
